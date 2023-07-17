@@ -9,15 +9,15 @@ const Menu = () => {
       <div className='w-full h-auto flex justify-between'>
         <div className='w-96 h-80'>
             <div><img src={Mensclothing}/></div>
-            <div><Link to='/category'>Mens</Link></div>
+            <div><Link to={`/category/men's%20clothing`}>Mens</Link></div>
         </div>
         <div className='w-96 h-80'>
         <div><img src={  womenClothing}/></div>
-            <div><Link to='/category'>Women</Link></div>
+            <div><Link to={`/category/women's clothing`}>Women</Link></div>
         </div>
         <div className='w-96 h-80'>
         <div><img src={ Jwellery}/></div>
-            <div><Link to='/category'>Jwellery</Link></div>
+            <div><Link to={'/category/jewelery'}>Jwellery</Link></div>
         </div>
        
       </div>
