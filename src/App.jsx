@@ -5,6 +5,8 @@ import Category from './pages/Category';
 import Cart from './pages/Cart';
 import AppContext from './context/productcontext'
 import {CartProvider} from './context/CartContext'
+import Sucess from './components/Sucess';
+import Cancel from './components/Cancel';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
           <Route path='/' element={<Home/>}></Route>
           <Route path='/category/:name' element={<Category/>}></Route>
           <Route path='/cart' element={<Cart/>}/>
+          <Route path='/sucess' element={<Sucess/>}/>
+          <Route path='/cancel' element={<Cancel/>}/>
          
       </Routes>
     </Router>

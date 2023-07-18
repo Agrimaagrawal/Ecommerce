@@ -1,36 +1,51 @@
 const CartReducer=(state,action)=>{
     switch(action.type){
         case "ADD":
-            const tempState=state.filter((item)=>action.payload.id===item.id);
+            const tempState=state.cart.filter((item)=>action.payload.id===item.id);
             if(tempState.length>0){
-                return state
+                return {
+                    ...state
+                }
             }
             else{
-                return [...state,action.payload]
+                return {
+                    ...state,
+                    cart:[...state.cart,action.payload],
+                    value:state.value+1
+                }
             }
         case"INCREASE":
             // eslint-disable-next-line no-case-declarations
-            const increase=state.map((item)=>{
-                 if(item.id===action.payload.id){
-                    return {...item,quantity:item.quantity+1}
-                 }
-                 else{
-                    return item
-                 }
-          });
-          return increase;
+            return{
+                ...state,
+                cart:state.cart.filter((c)=>c.id===action.payload.id?(c.quantity=action.payload.quantity+1):c.quantity)
+            }
 
         case"DECREASE":
               // eslint-disable-next-line no-case-declarations
-              const decrease=state.map((item)=>{
-                if(item.id===action.payload.id){
-                    return  {...item,quantity:item.quantity<0?0:item.quantity-1}
-              }
-              else{
-                return item
-              }
-              });
-              return decrease;
+              return{
+                ...state,
+                cart:state.cart.filter((c)=>c.id===action.payload.id?(c.quantity=action.payload.quantity-1):c.quantity)
+            }
+        
+        case "REMOVE":
+            
+            
+            
+             return {
+                ...state,
+                cart:state.cart.filter((item)=>item.id!== action.payload.id)
+             };
+        case "CLEAR":
+            return{
+                ...state,
+                cart:[]
+            }
+             
+                
+            
+          
+             
                   
           
            
