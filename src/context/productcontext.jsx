@@ -9,7 +9,8 @@ const BASEURL="https://fakestoreapi.com";
 const initialState={
     isLoading:'false',
     isError:'false',
-    Products:[]
+    Products:[],
+    signin:'',
 }
 
 

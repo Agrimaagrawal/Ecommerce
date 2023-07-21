@@ -7,6 +7,8 @@ import AppContext from './context/productcontext'
 import {CartProvider} from './context/CartContext'
 import Sucess from './components/Sucess';
 import Cancel from './components/Cancel';
+import SignIn from './pages/Signin';
+import { AuthProvider } from './context/AuthContext';
 
 
 function App() {
@@ -15,7 +17,9 @@ function App() {
   return (
     <>
     <AppContext>
+      <AuthProvider>
       <CartProvider>
+        
     <Router>
       <Navbar/>
       <Routes>
@@ -24,10 +28,12 @@ function App() {
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/sucess' element={<Sucess/>}/>
           <Route path='/cancel' element={<Cancel/>}/>
+          <Route path='/signinpage' element={<SignIn/>}/>
          
       </Routes>
     </Router>
     </CartProvider>
+    </AuthProvider>
     </AppContext>
    
       

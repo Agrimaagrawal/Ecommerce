@@ -34,12 +34,16 @@ const CartReducer=(state,action)=>{
             
              return {
                 ...state,
-                cart:state.cart.filter((item)=>item.id!== action.payload.id)
+                cart:state.cart.filter((item)=>item.id!== action.payload.id),
+                value:state.cart.length===0?0:state.value-1
+                
              };
         case "CLEAR":
             return{
                 ...state,
-                cart:[]
+                cart:[],
+                value:0
+                
             }
              
                 
