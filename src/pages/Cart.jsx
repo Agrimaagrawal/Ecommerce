@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
-
+import Checkout from '../components/Checkout'
 
 
 const Cart = () => {
-    const {state,dispatch}=useContext(CartContext);
+    const {state,dispatch,handlecheckout}=useContext(CartContext);
+    
    
     if(state.cart?.length===0){
       return(
@@ -47,7 +48,7 @@ const Cart = () => {
         <div>Total:{total}</div>
       )
     }
-    <button >Checkout</button>
+   <Checkout total={total}/>
     
     </div>
   )

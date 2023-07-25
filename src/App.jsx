@@ -5,7 +5,7 @@ import Category from './pages/Category';
 import Cart from './pages/Cart';
 import AppContext from './context/productcontext'
 import {CartProvider} from './context/CartContext'
-import Sucess from './components/Sucess';
+import Sucess from './components/Loader';
 import Cancel from './components/Cancel';
 import SignIn from './pages/Signin';
 import { AuthProvider } from './context/AuthContext';
