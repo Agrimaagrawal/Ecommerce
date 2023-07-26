@@ -9,6 +9,7 @@ import Sucess from './components/Loader';
 import Cancel from './components/Cancel';
 import SignIn from './pages/Signin';
 import { AuthProvider } from './context/AuthContext';
+import SingleProduct from './components/SingleProduct';
 
 
 function App() {
@@ -21,10 +22,11 @@ function App() {
       <CartProvider>
         
     <Router>
-      <Navbar/>
+      
       <Routes>
           <Route path='/' element={<Home/>}></Route>
           <Route path='/category/:name' element={<Category/>}></Route>
+          <Route path='/product/:id' element={<SingleProduct/>}></Route>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/sucess' element={<Sucess/>}/>
           <Route path='/cancel' element={<Cancel/>}/>

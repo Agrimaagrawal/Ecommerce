@@ -13,11 +13,17 @@ const Signin = () => {
   
 
   return (
+    <>
+    
     <div >
      {user?<Home/>:
-      <button onClick={()=>signInWithGoogle()}><GoogleButton/></button>
+     <div className='flex justify-center items-center h-screen flex-col'>
+      <h1 className='text-4xl pt-3 font-semibold'>Sign in</h1>
+      <button onClick={()=>signInWithGoogle()} className="m-auto"><GoogleButton/></button>
+      </div>
 }
     </div>
+    </>
   
   )
 }

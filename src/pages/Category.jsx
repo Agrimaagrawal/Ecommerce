@@ -3,9 +3,8 @@ import { useEffect } from "react";
 import {apiGet} from "../api/api";
 import { useState } from "react";
 import Product from "../components/Product";
-import Filter from "../components/Filter";
-import  {FilterContext}  from "../context/FilterContext";
 import { useContext } from "react";
+import Navbar from "../components/Navbar";
 
 
 const Category = () => {
@@ -23,15 +22,19 @@ const Category = () => {
   },[name])
   
   return (
-    <div className=" w-[100%] h-[721px] flex ">
+    <>
+  <Navbar/>
+    <div className=" w-[100%]  flex ">
+     
       
-      <div className="w-full h-[721px] bg-slate-800 flex justify-center">
+      <div className="w-full   flex justify-center">
         <Product data={data} />
       </div>
       
       
       
     </div>
+    </>
   )
 }
 

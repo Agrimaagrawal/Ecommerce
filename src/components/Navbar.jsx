@@ -13,10 +13,12 @@ const Navbar = () => {
   }
 
   return (
-    <div className='w-full h-8 bg-black flex justify-end gap-3'>
-      <div className='text-white'><Link to='/signinpage' >{user?<button onClick={signout}>Sign out</button>:<button>Sign in</button>}</Link></div>
-      <Link to='/cart' className='text-white'>Cart</Link>
-      <div className='text-white'>({val})</div>
+    <div className='w-full h-12 bg-black flex justify-between p-2 '>
+      <Link to='/'><div className='text-gray-200 font-bold text-xl'>StyleHub</div></Link>
+      <div className='flex gap-5 '>
+      <div className='text-white bg-red-300 p-1 rounded-lg md:text-xl pl-2 pr-2 hover:bg-slate-400'><Link to='/signinpage' >{user?<button onClick={signout}>Sign out</button>:<button>Sign in</button>}</Link></div>
+      <Link to='/cart' className='text-white p-1 '>Cart<span className='font-bold  '>({val})</span></Link>
+      </div>
     </div>
   )
 }

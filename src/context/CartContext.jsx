@@ -91,7 +91,7 @@ const initialState={
     
     
     const [state,dispatch]=useReducer(reducer,initialState);
-    getvalue(user)
+    
    
     
     
