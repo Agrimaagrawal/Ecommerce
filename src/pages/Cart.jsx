@@ -15,7 +15,7 @@ const Cart = () => {
      <Emptycart/>
       )
     }
-    const total=state.cart.reduce((total,item)=>{
+    const total=state.cart?.reduce((total,item)=>{
      return Math.round(total+item.price*item.quantity)
     },0)
    
