@@ -12,7 +12,7 @@ import {fs} from '../../firebase/firebaseclient' ;
 const getLocalCartData=()=>{
     let newCartData=localStorage.getItem("Cart");
     
-    if(newCartData===[]){
+    if(newCartData===null){
         return [];
     }else{
         return JSON.parse(newCartData)
