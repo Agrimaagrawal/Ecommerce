@@ -4,13 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 
-
-const Product = ({data,flag}) => {
- 
- 
- 
-  
-    
+const Product = ({data,flag}) => {  
   return (
     <div className=" flex w-[100%] m-3 gap-4 flex-wrap justify-center ">
       {
@@ -18,7 +12,7 @@ const Product = ({data,flag}) => {
         data.map((e)=>{
           e.quantity=1;
           return(
-            <Link to={`/product/${e.id}` } key={e.id}><div  className="w-[300px] shadow-xl flex flex-col items-center p-5 ">
+            <div  className="w-[300px] shadow-xl flex flex-col items-center p-5 " key={e.id}>
                 
                 <div><img src={e.image} className="w-[300px] h-[300px] p-2 "></img></div>
                 <div className='text-center p-2'>{e.title}</div>
@@ -27,7 +21,7 @@ const Product = ({data,flag}) => {
                 {console.log(e)}
                 
             </div>
-            </Link>
+            
           )
         })
       }
